@@ -527,7 +527,7 @@
 
         .rot-bg{
           position: absolute;
-          bottom: 15%;
+          bottom: 30%;
           right: 10%;
           width: 100px;
           z-index: 1;
@@ -535,7 +535,7 @@
 
          .rot{
           position: absolute;
-          bottom: 15%;
+          bottom: 30%;
           right: 10%;
           width: 100px;
           z-index: 1;
@@ -667,8 +667,8 @@
           display: flex;
           align-items: center;
           gap: 20px;
-          width: max-content;          /* essential for continuous scrolling */
-          padding-bottom: 20vh;        /* original style: gives breathing space from bottom */
+          width: max-content;
+          padding-bottom: 20vh;
           animation: horizontalSlide 30s linear infinite;
           will-change: transform;
         }
@@ -1196,7 +1196,7 @@ footer {
     position: relative;
 }
 
-        /* Responsive */
+        /* ========== RESPONSIVESNESS ========== */
         @media (max-width: 1024px) {
         .con1 {
         text-align: center;
@@ -1314,16 +1314,7 @@ footer {
             .sec2-h2 { font-size: 40px; }
             .sec2-p { font-size: 16px; }
             .flex_con1 { height: auto; min-height: 400px; padding: 40px 20px; }
-            .flex_con1 img { 
-                /* position: relative; right: auto; top: auto; max-width: 100%; width: 100%; height: auto; margin-bottom: 20px;  */
-                max-width: 100%;
-                position: absolute;
-                right: -25%; /* Pushes 10% of the image outside the right edge */
-                top: 1%;
-                height: auto;
-                z-index: 1;
-                transition: right 0.3s ease;
-            }
+            .flex_con1 img { max-width: 100%; position: absolute; right: -25%; top: 1%; height: auto; z-index: 1; transition: right 0.3s ease;}
             .gd_h6 {
                 font-size: 20px;
             font-weight: 600;
