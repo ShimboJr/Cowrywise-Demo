@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title>Cowrywise Dashboard Clone</title>
+
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg" id="header">
+    <div class="container-fluid">
+        <img src="/images/index-logo.svg" alt="" class="ms-2">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarScroll">
+
+            <!-- ========== DESKTOP NAVIGATION ========== -->
+            <ul class="navbar-nav me-auto my-2 my-lg-0 ms-5 index-ul d-none d-lg-flex">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Personal</a>
+                    <div class="dropdown-menu" style="min-width: 620px;">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <a class="dropdown-item-custom" href="#">
+                                    <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                        <!-- <i class="bi bi-piggy-bank fs-4 text-green"></i> -->
+                                        <img src="./images/savings-icon.svg" alt="" style="width: 50px">
+                                    </div>
+                                    <div>
+                                        <span class="fw-semibold d-block">Savings</span>
+                                        <small class="txt-m">Save and earn amazing returns</small>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item-custom" href="#">
+                                    <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                         <img src="./images/mutual-icon.svg" alt="" style="width: 50px">
+                                    </div>
+                                    <div>
+                                        <span class="fw-semibold d-block">Mutual Funds</span>
+                                        <small class="txt-m">Grow your wealth without chasing charts</small>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item-custom" href="#">
+                                    <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                         <img src="./images/stocks-icon.svg" alt="" style="width: 50px">
+                                    </div>
+                                    <div>
+                                        <span class="fw-semibold d-block">Stocks <span class="badge ms-1 nnn">NEW!</span></span>
+                                        <small class="txt-m">Own a slice of Nigeria’s top companies</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="dropdown-header">Growth Tools</h6>
+                                <a class="dropdown-item" href="#">Estimate your interests</a>
+                                <a class="dropdown-item" href="#">Know your risk appetite</a>
+                                <a class="dropdown-item" href="#">Plan your child’s education</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Business</a>
+                    <div class="dropdown-menu" style="min-width: 320px;">
+                        <a class="dropdown-item-custom" href="#">
+                            <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                 <img src="./images/sprout-icon.svg" alt="" style="width: 50px">
+                            </div>
+                            <div>
+                                <span class="fw-semibold d-block">Sprout</span>
+                                <small class="txt-m">Put your business idle cash to work</small>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer</a>
+                    <div class="dropdown-menu" style="min-width: 350px;">
+                        <a class="dropdown-item-custom" href="#">
+                            <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                 <img src="./images/embed-icon.svg" alt="" style="width: 50px">
+                            </div>
+                            <div>
+                                <span class="fw-semibold d-block">Embed</span>
+                                <small class="txt-m">Offer investment services in your app</small>
+                            </div>
+                        </a>
+                        <a class="dropdown-item-custom" href="#">
+                            <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                 <img src="./images/glossary-icon.svg" alt="" style="width: 50px">
+                            </div>
+                            <div>
+                                <span class="fw-semibold d-block">Docs</span>
+                                <small class="txt-m">Read how to integrate the Embed API</small>
+                            </div>
+                        </a>
+                        
+                        
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Learn</a>
+                    <div class="dropdown-menu" style="min-width: 320px;">
+                        <a class="dropdown-item-custom" href="#">
+                            <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                 <img src="./images/glossary-icon.svg" alt="" style="width: 50px">
+                            </div>
+                            <div>
+                                <span class="fw-semibold d-block">Glossary</span>
+                                <small class="txt-m">Learn from a curation of simple money terms</small>
+                            </div>
+                        </a>
+                        <a class="dropdown-item-custom" href="#">
+                            <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                 <img src="./images/glossary-icon.svg" alt="" style="width: 50px">
+                            </div>
+                            <div>
+                                <span class="fw-semibold d-block">Blog</span>
+                                <small class="txt-m">Announcements, articles and stories</small>
+                            </div>
+                        </a>
+                        <a class="dropdown-item-custom" href="#">
+                            <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                 <img src="./images/help-icon.svg" alt="" style="width: 50px">
+                            </div>
+                            <div>
+                                <span class="fw-semibold d-block">Help Center</span>
+                                <small class="txt-m">Everything you need to use Cowrywise</small>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- ========== MOBILE NAVIGATION ========== -->
+            <ul class="navbar-nav me-auto ms-5 index-ul-mobile d-lg-none">
+
+              <!-- PERSONAL -->
+                <li class="nav-item animate-item">
+                    <a class="nav-link mobile-toggle" data-bs-toggle="collapse" href="#mobilePersonal" role="button" aria-expanded="false" aria-controls="mobilePersonal">
+                        Personal <span class="mobile-arrow">▾</span>
+                    </a>
+                    <div class="collapse" id="mobilePersonal">
+                        <ul class="mobile-submenu">
+                            <li>
+                                <a class="nav-link" href="#">
+                                    <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                         <img src="./images/savings-icon.svg" alt="" style="width: 50px">
+                                    </div>
+                                    <div>
+                                        <span class="sub-title">Savings</span>
+                                        <span class="sub-desc">Save and earn amazing returns</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#">
+                                    <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                        <img src="./images/mutual-icon.svg" alt="" style="width: 50px">
+                                    </div>
+                                    <div>
+                                        <span class="sub-title">Mutual Funds</span>
+                                        <span class="sub-desc">Grow your wealth without chasing charts</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#">
+                                    <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                        <img src="./images/stocks-icon.svg" alt="" style="width: 50px">
+                                    </div>
+                                    <div>
+                                        <span class="sub-title">Stocks (NEW!)</span>
+                                        <span class="sub-desc">Own a slice of Nigeria’s top companies</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <!-- BUSINESS -->
+                <li class="nav-item animate-item">
+                    <a class="nav-link mobile-toggle" data-bs-toggle="collapse" href="#mobileBusiness" role="button" aria-expanded="false" aria-controls="mobilePersonal">
+                        Business <span class="mobile-arrow">▾</span>
+                    </a>
+                    <div class="collapse" id="mobileBusiness">
+                        <ul class="mobile-submenu">
+                            <li>
+                                <a class="nav-link" href="#">
+                                    <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                        <img src="./images/sprout-icon.svg" alt="" style="width: 50px">
+                                    </div>
+                                    <div>
+                                        <span class="sub-title">Sprout</span>
+                                        <span class="sub-desc">Put your business idle cash to work</span>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </li>
+
+                 <!-- DEVELOPER -->
+                <li class="nav-item animate-item">
+                    <a class="nav-link mobile-toggle" data-bs-toggle="collapse" href="#mobileDeveloper" role="button" aria-expanded="false" aria-controls="mobileDeveloper">
+                        Developer <span class="mobile-arrow">▾</span>
+                    </a>
+                    <div class="collapse" id="mobileDeveloper">
+                        <ul class="mobile-submenu">
+                            <li>
+                                <a class="nav-link" href="#">
+                                    <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                        <img src="./images/embed-icon.svg" alt="" style="width: 50px">
+                                    </div>
+                                    <div>
+                                        <span class="sub-title">Embed</span>
+                                        <span class="sub-desc">Offer investment services in your app</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#">
+                                    <div class="icon-circle d-flex align-items-center justify-content-center rounded-circle icon-bg">
+                                        <img src="./images/glossary-icon.svg" alt="" style="width: 50px">
+                                    </div>
+                                    <div>
+                                        <span class="sub-title">Docs</span>
+                                        <span class="sub-desc">Read how to integrate the Embed API</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+                
+                <!-- Divider -->
+                <li class="nav-item mobile-divider animate-item"></li>
+                <!-- Sign Up / Log In -->
+                <li class="nav-item animate-item"><a class="nav-link" href="./signup.html">Sign Up</a></li>
+                <li class="nav-item animate-item"><a class="nav-link" href="./signin.html">Log In</a></li>
+                <!-- Additional links -->
+                <li class="nav-item animate-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item animate-item"><a class="nav-link" href="#">FAQ's</a></li>
+                <li class="nav-item animate-item"><a class="nav-link" href="#">Security</a></li>
+                <li class="nav-item animate-item"><a class="nav-link" href="#">Learn</a></li>
+            </ul>
+
+            <!-- DESKTOP CTA BUTTONS (hidden on mobile) -->
+            <div class="d-flex me-2 d-none d-lg-flex">
+                <a href="./signin.html" class="btn me-2 a-log">Log in</a>
+                <button class="btn btn-primary fw-bold px-4 py-2" type="submit" onclick="window.location.href='signup.html'">Sign up for free</button>
+            </div>
+
+            <!-- MOBILE DISCLAIMER -->
+            <p class="mobile-disclaimer d-lg-none animate-item">
+                Cowrywise Financial Technology Limited (“Cowrywise”) is a fund manager duly licensed by the Securities and Exchange Commission (SEC) of Nigeria.
+            </p>
+
+        </div>
+    </div>
+</nav>
+
+<!-- Page sections -->
+<section class="sec1">
+    <div class="con1">
+        <h1>Watch your money do more</h1>
+        <p>One app. All your savings and investment needs. Trusted by individuals, HNIs, and corporates</p>
+        <a href="">Start building wealth <img src="./images/curve.png" alt=""></a>
+    </div>
+</section>
+
+<section class="sec2">
+    <div class="row con2">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <h2 class="sec2-h2">How would you like to grow?</h2>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <p class="sec2-p">All your wealth-building tools, finally in one app. Save automatically for the things you care about and grow your wealth the smart way.</p>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 text-lg-end text-md-end text-sm-start">
+            <button class="sec2-btn">Start now</button>
+        </div>
+    </div>
+
+    <div class="grid_con1">
+        <div class="grid_item1">
+            <div class="flex_con1">
+                <img src="./images/sec2-product-savings.webp" alt="">
+                <h6 class="gd_h6">Saving <span class="ar"> → </span></h6>
+                <div class="sub1">
+                    <div class="arw">
+                        <img src="./images/moving-n-arrow.svg" alt="" style="width: 50px; position: absolute; left: 50%; transform: translateX(-50%); background-color: rgb(245, 246, 250); border-radius: 50%;">
+                    </div>
+                    <div>
+                        <p>Automate savings for your important goals, from simple milestones to big dreams and earn steady returns</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid_item1">
+            <div class="flex_con1">
+                <img src="./images/sec2-product-mutual-funds.webp" alt="">
+                <h6 class="gd_h6">Mutual Funds <span class="ar"> → </span></h6>
+                <div class="sub1">
+                    <div class="arw">
+                        <img src="./images/moving-arrow2.svg" alt="" style="width: 50px; position: absolute; left: 50%; transform: translateX(-50%); background-color: rgb(245, 246, 250); border-radius: 50%;">
+                    </div>
+                    <div>
+                        <p>Smart returns without guesswork. Our mutual funds handle it, letting you focus on your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid_item1">
+            <div class="flex_con1">
+                <img src="./images/sec2-product-stocks.webp" alt="">
+                <h6 class="gd_h6">Stocks <span class="ar"> → </span></h6>
+                <div class="sub1">
+                    <div class="arw">
+                        <img src="./images/moving-arrow.svg" alt="" style="width: 50px; position: absolute; left: 50%; transform: translateX(-50%); background-color: rgb(245, 246, 250); border-radius: 50%;">
+                    </div>
+                    <div>
+                        <p>Co-own Nigeria's top companies, from market leaders to newcomers and grow with them.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec3">
+    <div class="row con2">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <h2 class="sec2-h2">Built on trust. Backed by results.</h2>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <p class="sec2-p">We handle money the way it should be, <b>responsibly</b>. We're regulated by the SEC and built for transparency. No hidden tricks, no risky plays, just access to assets designed to grow your wealth the right way.</p>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 text-lg-end text-md-end text-sm-start">
+            <button class="sec2-btn">Start investing</button>
+        </div>
+    </div>
+
+     <div class="grid_con2">
+        <div class="grid_item1">
+            <div class="flex_con2">
+                <img src="./images/cowrywise-app-screen-home-2025.webp" alt="" class="screen">
+                <img src="./images/s-coin-2.webp" alt="" class="coin">
+                <img src="./images/rot-bg.png" alt="" class="rot-bg">
+                <img src="./images/rot.svg" alt="" class="rot">
+            </div>
+        </div>
+
+        <div class="grid_item1">
+            <div class="itm">
+                <div class="itm1">
+                    <h5>Grow with clarity, <br><span style="color: rgb(108, 130, 163);">not confusion.</span></h5>
+                    <p>What's better than watching your money grow in real time? Tracking your investments, savings, and returns without the guesswork.</p>
+                </div>
+                <div style="width: 100%; position: relative;">
+                    <img src="./images/girl-face-model.webp" alt="" class="itm2">
+                    <img src="./images/s-coin-2.webp" alt="" class="coin2">
+                </div>
+  
+            </div>
+        </div>
+
+        <div class="grid_item1">
+            <div class="flex_con2">
+                <img src="./images/flowers.webp" alt="" class="flower">
+            
+            </div>
+        </div>
+
+    </div>
+
+    <a href="" class="apr">Our approach to security & regulation →</a>
+</section>
+
+<div class="sec4">
+    <h2>You name it, we've figured it out.</h2>
+</div>
+
+<div class="infinite-track">
+
+    <div class="moving-card">
+    
+            <a href="">
+                <span>"</span>
+            <p>Get better returns on my money</p>
+            </a>
+    
+            <a href="">
+                <span>"</span>
+            <p>Invest my business cash</p>
+            </a>
+
+            <a href="">
+                <span>"</span>
+            <p>Invest in mutual funds easily</p>
+            </a>
+
+            <a href="">
+                <span>"</span>
+            <p>Invest in stocks</p>
+            </a>
+
+            <a href="">
+                <span>"</span>
+            <p>Automate and build my savings</p>
+            </a>
+
+            <a href="">
+                <span>"</span>
+            <p>Access Naira & USD Investments</p>
+            </a>
+
+            <!-- Duplicate set for seamless infinite loop -->
+            <a href="">
+                <span>"</span>
+            <p>Get better returns on my money</p>
+            </a>
+    
+            <a href="">
+                <span>"</span>
+            <p>Invest my business cash</p>
+            </a>
+
+            <a href="">
+                <span>"</span>
+            <p>Invest in mutual funds easily</p>
+            </a>
+
+            <a href="">
+                <span>"</span>
+            <p>Invest in stocks</p>
+            </a>
+
+            <a href="">
+                <span>"</span>
+            <p>Automate and build my savings</p>
+            </a>
+
+            <a href="">
+                <span>"</span>
+            <p>Access Naira & USD Investments</p>
+            </a>
+
+    </div>
+
+</div>
+
+<section class="sec5">
+    <div class="row con5">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <h2 class="sec5-h2">Time really is money</h2>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <p class="sec5-p">  <strong>Sometimes the best time to invest was yesterday. The next best? Today.</strong> <span> See how your money could’ve grown in hindsight and why waiting costs more than you think.</span> </p>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 text-lg-end text-md-end text-sm-start">
+            <button class="sec5-btn">Start investing</button>
+        </div>
+    </div>
+
+    <div class="con7">
+        <div class="cl1">
+            <div class="cl1-a">
+                <div class="top-row">
+                    <span>If you invested</span>
+                    <select name="" id="">
+                        <option value="">just once</option>
+                        <option value="">every week</option>
+                        <option value="" selected>every month</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">last year</option>
+                        <option value="" selected>3 years ago</option>
+                        <option value="">5 years ago</option>
+                    </select>
+                </div>
+
+                <div class="bottom-row">
+                    <input type="text" value="100,000">
+                    <select name="" id="">
+                        <option value="" selected>NAIRA</option>
+                        <option value="">Dollar</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="cl2">
+            <img src="./images/starly.svg" alt="">
+            <div class="cl2-a">
+                <div class="top-row">
+                    <span style="color: rgb(75, 166, 61);">Today, you'd have </span>
+                </div>
+
+                <div class="bottom-row">
+                   <p style="color: rgb(75, 166, 61);"> <sup>₦</sup>144,098</p>
+                </div>
+            </div>
+            
+            <div class="cl2-b">
+                <div class="top-row">
+                    <span style="color: rgb(75, 166, 61);">..earned returns on Cowrywise </span>
+                </div>
+
+                <div class="bottom-row">
+                   <p style="color: rgb(75, 166, 61);"> <sup>₦</sup>44,098</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cl1">
+            <div class="cl1-a">
+                <div class="top-row">
+                    <span>..earned with your bank </span>
+                </div>
+
+                <div class="bottom-row">
+                   <p> <sup>₦</sup>28,800</p>
+                </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec6">
+        
+        <div class="sec6-a">
+            <h2>Millions of<br class="d-none d-md-inline"> customers can't be<br class="d-none d-md-inline"> wrong</h2>
+        </div>
+
+        <div class="sec6-b">
+            <p>Your goals are personal. That's why over two million Nigerians trust Cowrywise to help them grow, their way.</p>
+        </div>
+    
+</section>
+
+<section class="sec7">
+
+    <div class="img-play">
+        <img src="./images/moyosoluwa.jpeg" alt="">
+
+        <div class="play-icon">
+            <i class="fa-solid fa-play"></i>
+        </div> 
+        
+        <div class="play-text1">
+            <h6>"It impacted my finances positively."</h6>
+            <p>Moyosoluwa / customer since '21</p>
+        </div>
+    </div>
+
+    <div class="img-play">
+        <img src="./images/conscience.jpeg" alt="">
+
+        <div class="play-icon">
+            <i class="fa-solid fa-play"></i>
+        </div>
+        
+        <div class="play-text2">
+            <h6>"Makes my money work for me"</h6>
+            <p>Conscience / customer since '20</p>
+        </div>
+    </div>
+
+    <div class="img-play">
+        <img src="./images/funmilola.jpeg" alt="">
+
+        <div class="play-icon">
+            <i class="fa-solid fa-play"></i>
+        </div>
+        
+        <div class="play-text1">
+            <h6>"Helped improve my saving habits."</h6>
+            <p>Funmilola / customer since '20</p>
+        </div>
+    </div>
+
+    <div class="img-play">
+        <img src="./images/oyindamola.jpeg" alt="">
+
+        <div class="play-icon">
+            <i class="fa-solid fa-play"></i>
+        </div>
+        
+        <div class="play-text2">
+            <h6>"Helped me stay consistent"</h6>
+            <p>Oyindamola / customer since '23</p>
+        </div>
+    </div>
+
+</section>
+
+<div class="sec8">
+    <h3>Your future won't wait.</h3>
+    <a href=""> <i class="fa-solid fa-arrow-right d-none d-md-inline"></i> Start growing today</a>
+</div>
+
+<div class="pre-footer">
+    <div class="l-row">
+        <img src="./images/starss.svg" alt="" style="width: 100px;">
+        <p>Trusted by millions of Nigerians like you.</p>
+        <div class="d-flex gap-2">
+            <a href="">
+            <div class="d-flex gap-3">
+                <img src="./images/android.svg" alt="">
+                <div class="d-flex flex-column">
+                    <span style="font-size: 14px; font-weight: 500; color: rgb(108, 130, 163);">Get it on</span>
+                    <span style="font-size: 16px; font-weight: 600; color: rgb(8, 37, 82);">Play Store</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="">
+            <div class="d-flex gap-3">
+                <img src="./images/apple-n.svg" alt="">
+                <div class="d-flex flex-column">
+                    <span style="font-size: 14px; font-weight: 500; color: rgb(108, 130, 163);">Download on</span>
+                    <span style="font-size: 16px; font-weight: 600; color: rgb(8, 37, 82);">App Store</span>
+                </div>
+            </div>
+        </a>
+        </div>
+        
+    </div>
+
+    <div class="r-row">
+        <div class="row">
+      <div class="col-6 col-lg-3 col-md-6 d-flex mt-4">
+        <div class="foot_item w-100">
+          <h4>Company</h4>
+          <nav>
+            <ul>
+              <li> <a href="">About Us</a> </li>
+              <li> <a href="">Press</a> </li>
+              <li> <a href="">Careers</a> </li>
+              <li> <a href="">Ambassadors</a> </li>
+              <li> <a href="">Privacy</a> </li>
+              <li> <a href="">Terms</a> </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-3 col-md-6 d-flex mt-4">
+        <div class="foot_item w-100">
+          <h4>Product</h4>
+          <nav>
+            <ul>
+              <li> <a href="">Savings</a> </li>
+              <li> <a href="">Mutual funds</a> </li>
+              <li> <a href="">Stocks</a> </li>
+              <li> <a href="">Kids</a> </li>
+              <li> <a href="">Embed API</a> </li>
+              <li> <a href="">Sprout</a> </li>
+              <li> <a href="">Halal</a> </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-3 col-md-6 d-flex mt-4">
+        <div class="foot_item w-100">
+          <h4>Resources</h4>
+          <nav>
+            <ul>
+              <li> <a href="">Media</a> </li>
+              <li> <a href="">Security</a> </li>
+              <li> <a href="">FAQs</a> </li>
+              <li> <a href="">IMS Policy</a> </li>
+              <li> <a href="">Complaints</a> </li>
+              <li> <a href="">Simplified</a> </li>
+              <li> <a href="">Engineering</a> </li>
+              <li> <a href="">Glossary</a> </li>
+              <li> <a href="">Estimate interest</a> </li>
+              <li> <a href="">Blog</a> </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-3 col-md-6 d-flex mt-4">
+        <div class="foot_item w-100">
+          <h4>Contact</h4>
+          <nav>
+            <ul>
+              <li> <a href="">support@cowrywise.com</a> </li>
+              <li> <a href="">07000COWRYWISE</a> </li>
+              <li> <a href="">WhatsApp</a> </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+
+    </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="top-footer">
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa-brands fa-telegram"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+
+    <div class="middle-footer">
+        <p>🇳🇬  5C Reverend Ogunbiyi Street, Ikeja GRA, Lagos Nigeria.</p>
+
+        <a href="">
+            <div class="d-flex gap-3">
+                <img src="./images/sec-n.png" alt="">
+                <div class="d-flex flex-column">
+                    <span style="font-size: 12px; font-weight: 500; color: rgb(108, 130, 163);">SEC licensed</span>
+                    <span style="font-size: 12px; font-weight: 600; color: rgb(8, 37, 82);">Fund Manager</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="bottom-footer">
+        <p>Cowrywise Financial Technology Limited (“Cowrywise”) is a Fund/Portfolio Manager duly licensed by the Securities and Exchange Commission (SEC) of Nigeria, with License #1940 and its sister company, CFTL Digital Services Limited, is a Digital Sub-Broker duly licensed by the SEC, with License #3005.</p>
+
+        <p>Our mutual funds are managed by our fund management partners and made available to our clients through our web and mobile applications. The fund manager for each mutual fund is disclosed on every mutual fund’s profile page. Any historical returns or expected returns are hypothetical in nature and may not reflect actual future performance. <a href="">View full list of available mutual funds on Cowrywise</a>.</p>
+
+        <p>The content on this website does not constitute a complete description of Cowrywise’s fund management services. By creating a Cowrywise account, you accept Cowrywise’s Terms of Use and Privacy Policy , and by using the stocks feature on Cowrywise, you accept CFTL Digital's <a href="">Terms of Use</a> and <a href="">Privacy Policy .</a></p>
+
+        <p>Google Play and the Google Play logo are trademarks of Google LLC. Apple, the Apple logo, and iPhone are trademarks of Apple Inc. registered in the U.S.</p>
+
+        <p>© 2026  Cowrywise Financial Technology. All rights reserved. RC 1419869. <a href="">NDPC Audited and Compliant .</a></p>
+
+    </div>
+
+
+
+</footer>
+
+
+
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<script>
+    // Navbar scroll effect
+    window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("header");
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+
+    // Lock body scroll when menu is open/closed
+    const collapseEl = document.getElementById('navbarScroll');
+    collapseEl.addEventListener('show.bs.collapse', function () {
+        document.body.classList.add('menu-open');
+    });
+    collapseEl.addEventListener('hidden.bs.collapse', function () {
+        document.body.classList.remove('menu-open');
+    });
+
+    // Close mobile menu when a link is clicked (except toggles)
+    document.querySelectorAll('.index-ul-mobile .nav-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            if (link.classList.contains('mobile-toggle')) return;
+            const bsCollapse = bootstrap.Collapse.getInstance(collapseEl);
+            if (bsCollapse) {
+                bsCollapse.hide();
+            }
+        });
+    });
+
+    // Hover dropdowns on desktop
+    // if (window.innerWidth >= 992) {
+    //     document.querySelectorAll('.navbar .dropdown').forEach(function(dropdown) {
+    //         dropdown.addEventListener('mouseenter', function() {
+    //             const toggle = this.querySelector('.dropdown-toggle');
+    //             if (toggle) {
+    //                 const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(toggle);
+    //                 bsDropdown.show();
+    //             }
+    //         });
+    //         dropdown.addEventListener('mouseleave', function() {
+    //             const toggle = this.querySelector('.dropdown-toggle');
+    //             if (toggle) {
+    //                 const bsDropdown = bootstrap.Dropdown.getInstance(toggle);
+    //                 if (bsDropdown) bsDropdown.hide();
+    //             }
+    //         });
+    //     });
+    // }
+</script>
+</html>

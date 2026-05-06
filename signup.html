@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="sign.css">
+    <title>Signup Page</title>
+     <style>
+        body {
+            background-color: rgb(245, 247, 250);
+            margin: 0;
+            padding: 90px 80px;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+            overflow: auto;            
+            background-image: url('./images/signup-bg.svg');
+            background-repeat: no-repeat;
+            background-position: right bottom; 
+            background-size: 42%; 
+            background-attachment: scroll; 
+        }
+
+        @media (max-width: 1024px) {
+            .su-google{
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .su-google{
+                max-width: 40%;
+            }
+            .logo-div{
+                margin-bottom: 2vh;
+            }
+        }
+        
+           @media (max-width: 576px) {
+            body {
+                padding: 30px 30px;
+            }
+
+            .su-h5{
+                display: none;
+            }
+
+            .div-ft{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 40px;
+                margin-bottom: 180px;
+            }
+
+            .su-p{
+                padding: 0;
+                text-align: center;
+            }
+
+            .su-h{
+                font-size: 35px;
+                font-weight: 600;
+            color: rgb(10, 46, 101);
+            }
+
+            body{
+                background-image: none;
+            }
+            .su-google{
+                max-width: 100%;
+                text-align: center;
+            }
+            .su-h{
+                font-size: 32px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="logo-div">
+        <img src="./images/logo.svg" alt="">
+    </div>
+
+    <div class="row">
+
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                
+                    <div style="display: flex; flex-direction: column;">
+                        <div class="si-form">
+                        <h3 class="su-h">Start your investment journey</h3>
+
+                     <div class="su-create">
+                        <span>Got an account? <a href="./signin.html">Sign In</a></span>
+                    </div>
+
+                     
+                        <a href="" class="su-google"> <img src="./images/google.svg" alt=""> Sign up with Google</a>
+                    
+
+                    <div class="divider">or</div>
+            
+            <form action="">
+                <div class="input-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email Address</label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100 mt-5 ff">Continue</button>
+            </form>
+                </div>
+
+                    </div>
+
+         <div class="foot">
+        <div>
+            <img src="./images/sec.png" alt="">
+            <span>Cowrywise is licensed by the SEC</span>
+        </div>
+        
+            <a href="">Need Help?</a>
+
+    </div>
+
+        </div>
+
+        <div class="col-lg-5 col-md-12 col-sm-12 ps-lg-5 ps-md-3 py-4">
+            <div class="ps-lg-5 div-ft">
+                <h5 class="su-h5">Don’t wait to start</h5>
+            <p class="su-p">See how much you could have earned in the past few years</p>
+            <div class="su-miss">
+                <a href="#">See what you missed</a>
+                <img src="./images/star.svg" alt="" class="star">
+                <img src="./images/arrow.svg" alt="" class="arrow">
+            </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="fav">
+        <img src="./images/touch-icon.png" alt="" class="fav-icon">
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</html>
