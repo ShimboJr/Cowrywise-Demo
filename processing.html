@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered GIF</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #F4F7FA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .loader {
+            width: min(250px, 60vw);
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<img
+        src="./images/gif-logo-loading.gif"
+        alt="Loading"
+        class="loader"
+>
+
+</body>
+
+<!--<script>-->
+<!--    const waite = () => {-->
+<!--        setTimeout(() => {-->
+<!--            window.location.href = "dashboard.html"-->
+<!--        }, 2500)-->
+<!--    }-->
+<!--</script>-->
+
+</html>

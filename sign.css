@@ -112,7 +112,7 @@
 
 .input-group {
   position: relative;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
 }
 
 .input-group input {
@@ -309,6 +309,83 @@ input:focus + label{
   color: rgb(10, 46, 101);
 }
 
+/*Create Account CSS */
+.ca-h{
+    font-size: 50px;
+    font-weight: 600;
+    color: rgb(10, 46, 101);
+}
+
+.ca-h5{
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(10, 46, 101);
+    margin-bottom: 15px;
+}
+
+.ca-p{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(10, 46, 101);
+    margin-bottom: 15px;
+    padding-right: 80px;
+}
+
+.input-group2 {
+    position: relative;
+    margin: 10px 0 0 0;
+}
+
+.input-group2 input {
+    width: 100%;
+    padding: 12px 30px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Label styling */
+.input-group2 label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: white;
+    color: #777;
+    font-size: 16px;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+/* Move label up + change color when focused */
+.input-group2 input:focus + label,
+.input-group2 input:valid + label {
+    top: -8px;
+    font-size: 12px;
+    color: rgb(0, 102, 245); /* 👈 your color */
+}
+
+.ca-phone{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 15px;
+    opacity: 0.5;
+}
+
+.ca-term{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*end*/
+
 .su-create{
     font-size: 12.8px;
     font-weight: 400;
@@ -344,7 +421,6 @@ input:focus + label{
 
 .foot{
   display: flex;
-  /* width: 58%; */
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9b1ae094-5847-4d1e-a950-8482bdf229c1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../create-account.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../createPin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../forgot-password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../processing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resetPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../signIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sign.css" beforeDir="false" afterPath="$PROJECT_DIR$/../sign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/../signup.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/HomePC/Documents/SQI/Web Dev - Level 2(May 2026)/Cowrywise/images" value="3FLuiRFUeCDMc5B5jV11vctyXFy" />
+    </persistenceIdMap>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ShimboJr"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ShimboJr/Cowrywise-Demo.git",
+    "accountId": "3b770443-4367-48ef-91f7-d28e2c7a4e18"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="3FLuiRFUeCDMc5B5jV11vctyXFy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.22855.79" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b1ae094-5847-4d1e-a950-8482bdf229c1" name="Changes" comment="" />
+      <created>1781866803922</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1781866803922</updated>
+      <workItem from="1781866807008" duration="53000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

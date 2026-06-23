@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <title>Create PIN</title>
+
+    <style>
+
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f5f7fb;
+}
+
+.pin-card{
+    width:500px;
+    background:white;
+    border-radius:20px;
+    padding:40px 30px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.lock-icon{
+    font-size:60px;
+    margin-bottom:5px;
+}
+
+h2{
+    color:#0e2f6e;
+    font-size:38px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#7c8aa5;
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+h3{
+    color:#17366f;
+    margin-bottom:15px;
+    font-size:22px;
+    font-weight:600;
+}
+
+span{
+    color:#17366f;
+    margin-bottom:15px;
+    font-size:22px;
+    font-weight:600;
+}
+
+.pin-container{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.pin-container input{
+    width:65px;
+    height:65px;
+    border:1px solid #dfe4ea;
+    border-radius:12px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    outline:none;
+    transition:0.3s;
+}
+
+.pin-container input:focus{
+    border-color:#1f5ed9;
+    box-shadow:0 0 8px rgba(31,94,217,.2);
+}
+
+button{
+    margin-top:15px;
+    width:180px;
+    height:55px;
+    border:none;
+    border-radius:10px;
+    background:#6da4ff;
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#4d8eff;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="pin-card">
+
+
+        <div class="lock-icon">
+            <svg width="70" height="70" viewBox="0 0 24 24" fill="none">
+                <path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="#17366f" stroke-width="2"/>
+                <rect x="5" y="11" width="14" height="10" stroke="#17366f" stroke-width="2"/>
+            </svg>
+        </div>
+
+        <h2>Create PIN</h2>
+
+        <p class="subtitle">
+            Your PIN adds an extra layer of security to
+            your Cowrywise account
+        </p>
+
+        <h3>Create your PIN</h3>
+
+        <div class="pin-container">
+            <input type="password" id="pinNo1" maxlength="1" class="pin-box">
+            <input type="password" id="pinNo2" maxlength="1" class="pin-box">
+            <input type="password" id="pinNo3" maxlength="1" class="pin-box">
+            <input type="password" id="pinNo4" maxlength="1" class="pin-box">
+        </div>
+
+        <h3>Confirm your PIN</h3>
+
+        <div class="pin-container">
+            <input type="password" id="CpinNo1" maxlength="1" class="pin-box">
+            <input type="password" id="CpinNo2" maxlength="1" class="pin-box">
+            <input type="password" id="CpinNo3" maxlength="1" class="pin-box">
+            <input type="password" id="CpinNo4" maxlength="1" class="pin-box">
+        </div>
+
+        <span id="errMSG" style="color: rgb(255, 0, 0); font-size: 15px; font-weight: 400; margin-top: 0">
+        </span>
+
+        <button onclick="btnCreatePin()">
+            Create PIN
+        </button>
+
+    </div>
+
+
+</body>
+
+<script src="createPin.js"></script>
+
+<script>
+
+    const inputs = document.querySelectorAll('.pin-box');
+
+    inputs.forEach((input, index) => {
+        input.addEventListener('input', (e) => {
+            if (isNaN(e.target.value)) {
+                e.target.value = '';
+                return;
+            }
+            if (e.target.value.length === 1 && index < inputs.length - 1) {
+                inputs[index + 1].focus();
+            }
+        });
+
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
+                inputs[index - 1].focus();
+            }
+        });
+    });
+
+
+</script>
+
+
+<!--<script>-->
+<!--    const pEmail = document.getElementById('pinEmail');-->
+<!--    const cUser = localStorage.getItem('currentUser')-->
+
+<!--    const uUser = JSON.parse(localStorage.getItem(`${cUser}`));-->
+<!--    pEmail.innerHTML = uUser.email;-->
+
+<!--    // alert(`${pEmail.textContent}`)-->
+<!--</script>-->
+
+</html>
