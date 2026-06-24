@@ -1,8 +1,12 @@
-const waite = () => {
-    setTimeout(() => {
-        document.getElementById('loader').style.display = 'none';
-        document.getElementById('app').style.display = 'block';
-    }, 1000);
+const fetchInfo = () => {
+    if (!localStorage.currentUser) {
+        window.location.href = 'signin.html'
+    } else {
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('app').style.display = 'block';
+        }, 1000);
+    }
 }
 
 const logout = () => {
