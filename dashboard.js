@@ -1,6 +1,6 @@
 const fetchInfo = () => {
     if (!localStorage.currentUser) {
-        window.location.href = 'signin.html'
+        window.location.href = 'signin.html';
     } else {
         setTimeout(() => {
             document.getElementById('loader').style.display = 'none';
