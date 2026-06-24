@@ -143,6 +143,8 @@ const btnCreate = () => {
         alert('Please fill all field')
     } else if (uName.value.charAt(0) !== '@') {
         alert(`Input Username as @${uName.value}`)
+    } else if (phoneNo.value.charAt(0) !== '0' || phoneNo.value.length < 11) {
+        alert('Phone Number is invalid')
     } else if (isPasswordValid(pass.value) === false) {
         alert(`Enter a valid password\nMust be Alphanumeric and contain at least one special character`)
     } else if (allUsername.includes(uName.value.trim())) {
