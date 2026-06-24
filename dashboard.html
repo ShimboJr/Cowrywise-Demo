@@ -223,14 +223,14 @@
                     <div class="bg-white p-3 rounded-4 border-0">
                         <h3 class="section-heading">Add cash</h3>
                         <div class="d-flex gap-2 flex-wrap">
-                            <button class="pill-btn-outline standard">₦ 20K</button>
-                            <button class="pill-btn-outline standard">₦ 50K</button>
-                            <button class="pill-btn-outline standard">₦ 100K</button>
+                            <button class="pill-btn-outline standard" onclick="addCash('20000')">₦ 20K</button>
+                            <button class="pill-btn-outline standard" onclick="addCash('50000')">₦ 50K</button>
+                            <button class="pill-btn-outline standard" onclick="addCash('100000')">₦ 100K</button>
                         </div>
                         <div class="d-flex gap-2 flex-wrap align-items-center mt-2">
                             <button class="pill-btn-outline standard">$ 100</button>
                             <button class="pill-btn-outline standard">$ 200</button>
-                            <div class="circle-plus-btn">+</div>
+                            <div class="circle-plus-btn" data-bs-toggle="modal" data-bs-target="#myModalAddCash">+</div>
                         </div>
                     </div>
 
@@ -497,14 +497,15 @@
                 <div class="invest-addcash">
                     <h5 style="font-size: 18px; font-weight: 600; color: rgb(4, 46, 104); margin-bottom: 10px;">Add cash</h5>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-                        <button class="save-pill-btn" style="border: none; border-radius: 50px; padding: 8px 16px; font-size: 14px; font-weight: 500; color: rgb(4, 46, 104); background: #F5F6FA; cursor: pointer;">₦ 20K</button>
-                        <button class="save-pill-btn" style="border: none; border-radius: 50px; padding: 8px 16px; font-size: 14px; font-weight: 500; color: rgb(4, 46, 104); background: #F5F6FA; cursor: pointer;">₦ 50K</button>
-                        <button class="save-pill-btn" style="border: none; border-radius: 50px; padding: 8px 16px; font-size: 14px; font-weight: 500; color: rgb(4, 46, 104); background: #F5F6FA; cursor: pointer;">₦ 100K</button>
+                        <button class="save-pill-btn" style="border: none; border-radius: 50px; padding: 8px 16px; font-size: 14px; font-weight: 500; color: rgb(4, 46, 104); background: #F5F6FA; cursor: pointer;"  onclick="addCash('20000')">₦ 20K</button>
+                        <button class="save-pill-btn" style="border: none; border-radius: 50px; padding: 8px 16px; font-size: 14px; font-weight: 500; color: rgb(4, 46, 104); background: #F5F6FA; cursor: pointer;" onclick="addCash('50000')">₦ 50K</button>
+                        <button class="save-pill-btn" style="border: none; border-radius: 50px; padding: 8px 16px; font-size: 14px; font-weight: 500; color: rgb(4, 46, 104); background: #F5F6FA; cursor: pointer;" onclick="addCash('100000')">₦ 100K</button>
                         <button class="save-pill-btn" style="border: none; border-radius: 50px; padding: 8px 16px; font-size: 14px; font-weight: 500; color: rgb(4, 46, 104); background: #F5F6FA; cursor: pointer;">$ 100</button>
                         <button class="save-pill-btn" style="border: none; border-radius: 50px; padding: 8px 16px; font-size: 14px; font-weight: 500; color: rgb(4, 46, 104); background: #F5F6FA; cursor: pointer;">$ 200</button>
-                        <div style="width: 40px; height: 40px; border-radius: 50%; border: none; background: #F5F6FA; display: flex; align-items: center; justify-content: center; font-size: 14px; color: rgb(4, 46, 104); cursor: pointer;">+</div>
+                        <div style="width: 40px; height: 40px; border-radius: 50%; border: none; background: #F5F6FA; display: flex; align-items: center; justify-content: center; font-size: 14px; color: rgb(4, 46, 104); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#myModalAddCash">+</div>
                     </div>
                 </div>
+
             </div>
 
             <div style="margin-bottom: 32px;">
@@ -603,6 +604,14 @@
                 <div class="data-value-plain" style="font-weight: 600">No Next Of Kin</div>
                 <div class="text-md-start">
                     <button class="btn-cowry-blue">Add Next Of Kin</button>
+                </div>
+            </div>
+
+            <h5 class="section-big-title yes-border mt-5 pb-4">Cashout Funds</h5>
+            <div class="profile-data-row">
+                <div class="data-value-plain" style="font-weight: 600">Withdraw Cash</div>
+                <div class="text-md-start">
+                    <button class="btn-cowry-blue" data-bs-toggle="modal" data-bs-target="#myModalCashout">Withdraw</button>
                 </div>
             </div>
 
@@ -805,6 +814,123 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal Add Cash-->
+        <div class="modal fade" id="myModalAddCash" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+
+                        <div class="cw-portfolio-modal">
+                            <button class="cw-close-btn" aria-label="Close modal" data-bs-dismiss="modal">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+
+                            <a class="cw-header-nav">
+                                <i class="bi bi-chevron-left" style="stroke-width: 1.5px;"></i>
+                                <span>Add Cash</span>
+                            </a>
+
+                            <div class="cw-amount-display-container">
+                                <span class="cw-naira-symbol">₦</span>
+                                <input
+                                        type="text"
+                                        class="cw-amount-input"
+                                        id="payment-amount"
+                                        inputmode="decimal"
+                                        placeholder=""
+                                        value="0"
+                                        autofocus
+                                >
+                            </div>
+
+                            <div class="cw-payment-method-row">
+                                <div class="cw-bank-icon-frame">
+                                    <i class="bi bi-bank"></i>
+                                </div>
+                                <div class="cw-method-details">
+                                    <div class="cw-method-title">Bank transfer</div>
+                                    <p class="cw-method-subtitle">Send money from your bank app</p>
+                                </div>
+                                <div class="cw-radio-indicator">
+                                    <div class="cw-radio-dot"></div>
+                                </div>
+                            </div>
+
+                            <div class="cw-action-footer">
+                                <button class="cw-btn-pay" id="pay-btn" onclick="addCashBtn()">Pay</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Withdraw Cash-->
+        <div class="modal fade" id="myModalCashout" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+
+                        <div class="cw-portfolio-modal">
+                            <button class="cw-close-btn" aria-label="Close modal" data-bs-dismiss="modal">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+
+                            <a class="cw-header-nav">
+                                <i class="bi bi-chevron-left" style="stroke-width: 1.5px;"></i>
+                                <span>Withdraw Cash</span>
+                            </a>
+
+                            <div class="cw-amount-display-container">
+                                <span class="cw-naira-symbol">₦</span>
+                                <input
+                                        type="text"
+                                        class="cw-amount-input"
+                                        id="withdrawal-amount"
+                                        inputmode="decimal"
+                                        placeholder=""
+                                        value="0"
+                                        autofocus
+                                >
+                            </div>
+
+                            <div class="cw-payment-method-row">
+                                <div class="cw-bank-icon-frame">
+                                    <i class="bi bi-bank"></i>
+                                </div>
+                                <div class="cw-method-details">
+                                    <div class="cw-method-title">Bank transfer</div>
+                                    <p class="cw-method-subtitle">Send money to your bank account</p>
+                                </div>
+                                <div class="cw-radio-indicator">
+                                    <div class="cw-radio-dot"></div>
+                                </div>
+                            </div>
+
+                            <div class="cw-action-footer">
+                                <button class="cw-btn-pay" id="withdraw-btn" onclick="withdrawBtn()">Withdraw</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
 
         <div class="fav">
             <img src="./images/touch-icon.png" alt="" class="fav-icon">
@@ -1025,6 +1151,110 @@
     balA2.innerHTML = uD.balance.slice(0,uD.balance.indexOf("."));
     balD2.innerHTML = uD.balance.slice(uD.balance.indexOf("."));
     balI.innerHTML = `₦ ${uD.balance}`;
+</script>
+
+<script>
+    const inputField = document.getElementById('payment-amount');
+    const payButton = document.getElementById('pay-btn');
+
+    // Create a hidden canvas span gauge to flawslessly measure text width dynamically
+    const visualGauge = document.createElement('span');
+    visualGauge.style.font = "500 44px 'Inter', sans-serif";
+    visualGauge.style.visibility = 'hidden';
+    visualGauge.style.position = 'absolute';
+    visualGauge.style.whiteSpace = 'pre';
+    document.body.appendChild(visualGauge);
+
+    inputField.addEventListener('input', (e) => {
+        let value = e.target.value;
+
+        // 1. Remove everything except numbers and a single decimal point
+        value = value.replace(/[^0-9.]/g, '');
+
+        // 2. Prevent multiple decimal points (keep only the first one)
+        const pointParts = value.split('.');
+        if (pointParts.length > 2) {
+            value = pointParts[0] + '.' + pointParts.slice(1).join('');
+        }
+
+        // 3. Enforce maximum of 2 decimal places for precise currency standard
+        if (pointParts[1] && pointParts[1].length > 2) {
+            value = pointParts[0] + '.' + pointParts[1].slice(0, 2);
+        }
+
+        e.target.value = value;
+
+        // Compute dynamic field sizing seamlessly
+        if (value.length === 0) {
+            inputField.style.width = '30px';
+            payButton.classList.remove('active');
+        } else {
+            visualGauge.textContent = value;
+            // Minor layout buffer calculation to ensure the native caret doesn't truncate/wrap
+            inputField.style.width = (visualGauge.offsetWidth + 14) + 'px';
+            payButton.classList.add('active');
+        }
+    });
+
+    // Block explicit non-numeric/non-decimal keys early on keydown for a cleaner desktop typing flow
+    inputField.addEventListener('keydown', (e) => {
+        const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Enter', '.'];
+        if (!allowedKeys.includes(e.key) && isNaN(Number(e.key))) {
+            e.preventDefault();
+        }
+    });
+</script>
+
+<script>
+    const inputF = document.getElementById('withdrawal-amount');
+    const payButton2 = document.getElementById('withdraw-btn');
+
+    // Create a hidden canvas span gauge to flawslessly measure text width dynamically
+    const visualGauge = document.createElement('span');
+    visualGauge.style.font = "500 44px 'Inter', sans-serif";
+    visualGauge.style.visibility = 'hidden';
+    visualGauge.style.position = 'absolute';
+    visualGauge.style.whiteSpace = 'pre';
+    document.body.appendChild(visualGauge);
+
+    inputF.addEventListener('input', (e) => {
+        let value = e.target.value;
+
+        // 1. Remove everything except numbers and a single decimal point
+        value = value.replace(/[^0-9.]/g, '');
+
+        // 2. Prevent multiple decimal points (keep only the first one)
+        const pointParts = value.split('.');
+        if (pointParts.length > 2) {
+            value = pointParts[0] + '.' + pointParts.slice(1).join('');
+        }
+
+        // 3. Enforce maximum of 2 decimal places for precise currency standard
+        if (pointParts[1] && pointParts[1].length > 2) {
+            value = pointParts[0] + '.' + pointParts[1].slice(0, 2);
+        }
+
+        e.target.value = value;
+
+        // Compute dynamic field sizing seamlessly
+        if (value.length === 0) {
+            inputF.style.width = '30px';
+            payButton2.classList.remove('active');
+        } else {
+            visualGauge.textContent = value;
+            // Minor layout buffer calculation to ensure the native caret doesn't truncate/wrap
+            inputF.style.width = (visualGauge.offsetWidth + 14) + 'px';
+            payButton2.classList.add('active');
+        }
+    });
+
+    // Block explicit non-numeric/non-decimal keys early on keydown for a cleaner desktop typing flow
+    inputF.addEventListener('keydown', (e) => {
+        const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Enter', '.'];
+        if (!allowedKeys.includes(e.key) && isNaN(Number(e.key))) {
+            e.preventDefault();
+        }
+    });
 </script>
 
 <script src="dashboard.js"></script>

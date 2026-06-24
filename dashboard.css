@@ -918,6 +918,166 @@ body {
     text-decoration: underline;
 }
 
+/* CENTRAL MODAL CONTAINER CONTAINER */
+.cw-portfolio-modal {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 530px;
+    border-radius: 24px;
+    padding: 32px 36px;
+    box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.12);
+    position: relative;
+}
+
+/* WINDOW CLOSE ICON TRIGGER */
+.cw-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: #94A3B8;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0;
+    transition: color 0.15s ease;
+}
+.cw-close-btn:hover {
+    color: #475569;
+}
+
+/* HEADER ROUTE NAVIGATION LINK */
+.cw-header-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #0066F5; /* Standard bright Cowrywise blue */
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 36px;
+    cursor: pointer;
+}
+.cw-header-nav:hover {
+    text-decoration: underline;
+}
+
+/* CURRENCY AMOUNT CAPTURE BLOCK */
+.cw-amount-display-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 48px;
+}
+
+.cw-naira-symbol {
+    font-size: 44px;
+    font-weight: 500;
+    color: #002D72; /* Corporate trademark dark blue */
+    line-height: 1;
+}
+
+/* FUNCTIONAL NUMERIC INPUT FIELD WITH NATIVE BLINKING CARET */
+.cw-amount-input {
+    font-size: 44px;
+    font-weight: 500;
+    color: #002D72;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1;
+    min-width: 80%; /* Base starting width for the cursor */
+    caret-color: #002D72; /* Inherits the elegant brand color and blinks natively */
+    transition: width 0.05s ease;
+}
+
+/* PAYMENT SELECTION METHOD BLOCK */
+.cw-payment-method-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 4px;
+    margin-bottom: 40px;
+}
+
+.cw-bank-icon-frame {
+    width: 40px;
+    height: 40px;
+    background-color: #E6F4EA; /* Very light green circle backdrop */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #137333; /* Soft banking green color icon */
+    font-size: 18px;
+}
+
+.cw-method-details {
+    flex-grow: 1;
+    padding-left: 16px;
+}
+
+.cw-method-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 2px;
+}
+
+.cw-method-subtitle {
+    font-size: 13px;
+    color: #94A3B8;
+    margin: 0;
+}
+
+/* CUSTOM SELECTION RADIO GRAPHIC */
+.cw-radio-indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #0066F5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cw-radio-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #0066F5;
+    border-radius: 50%;
+}
+
+/* FOOTER FORWARD BUTTON TRUNCATION */
+.cw-action-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cw-btn-pay {
+    background-color: #7BB1FA; /* Specific signature variant hue matching screenshot state */
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 32px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.cw-btn-pay.active {
+    background-color: #0066F5; /* Deepens to active state color when an amount is typed */
+}
+
+.cw-btn-pay:hover {
+    opacity: 0.9;
+}
+
 /* RESPONSIVENESS MEDIA QUERY */
 @media (max-width: 1024px) {
     .dashboard-grid, .portfolio-grid {

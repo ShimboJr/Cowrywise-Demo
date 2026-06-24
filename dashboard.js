@@ -220,3 +220,67 @@ const closeAccount = () => {
 
     }
 }
+
+const payAmt = document.getElementById('payment-amount');
+
+const addCash = (fixedAmount) => {
+    payAmt.value = `${fixedAmount}`
+
+    const modalElement = document.getElementById('myModalAddCash');
+
+    const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+
+    modal.show();
+}
+
+const addCashBtn = () => {
+    const  conf = confirm(`Are you sure you want to deposit ₦${payAmt.value.trim()}`)
+    if (conf) {
+        const cUser = localStorage.getItem('currentUser');
+        const uD = JSON.parse(localStorage.getItem(`${cUser}`));
+
+        let currentBal = parseFloat(uD.balance);
+        let payBal = parseFloat(payAmt.value.trim());
+
+        let newBal = currentBal + payBal;
+        uD.balance = newBal.toFixed(2);
+        localStorage.setItem(`${cUser}`, JSON.stringify(uD));
+
+        setTimeout(() => {
+            alert(`Deposit of ₦${payBal} is done successfully...`);
+            location.reload();
+        }, 1000);
+    } else {
+
+    }
+}
+
+const withdrawAmt = document.getElementById('withdrawal-amount');
+
+const withdrawBtn = () => {
+    const  conf = confirm(`Are you sure you want to withdraw ₦${withdrawAmt.value.trim()}`)
+    if (conf) {
+        const cUser = localStorage.getItem('currentUser');
+        const uD = JSON.parse(localStorage.getItem(`${cUser}`));
+
+        let currentBal = parseFloat(uD.balance);
+        let withdrawBal = parseFloat(withdrawAmt.value.trim());
+
+        let newBal = currentBal - withdrawBal;
+
+        if (currentBal < withdrawBal) {
+            alert(`Insufficient Balance to Initiate this Withdrawal\nCurrent Balance: ₦${currentBal}`);
+        } else {
+            uD.balance = newBal.toFixed(2);
+
+            localStorage.setItem(`${cUser}`, JSON.stringify(uD));
+            setTimeout(() => {
+                alert(`Withdrawal of ₦${withdrawBal} is done successfully...`);
+                location.reload();
+            }, 1000);
+        }
+
+    } else {
+
+    }
+}
