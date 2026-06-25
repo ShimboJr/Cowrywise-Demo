@@ -958,9 +958,6 @@ body {
     margin-bottom: 36px;
     cursor: pointer;
 }
-.cw-header-nav:hover {
-    text-decoration: underline;
-}
 
 /* CURRENCY AMOUNT CAPTURE BLOCK */
 .cw-amount-display-container {
