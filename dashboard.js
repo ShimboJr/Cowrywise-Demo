@@ -238,24 +238,29 @@ const addCash = (fixedAmount) => {
 }
 
 const addCashBtn = () => {
-    const  conf = confirm(`Are you sure you want to deposit ₦${payAmt.value.trim()}`)
-    if (conf) {
-        const cUser = localStorage.getItem('currentUser');
-        const uD = JSON.parse(localStorage.getItem(`${cUser}`));
+    let payBal = parseFloat(payAmt.value.trim());
 
-        let currentBal = parseFloat(uD.balance);
-        let payBal = parseFloat(payAmt.value.trim());
-
-        let newBal = currentBal + payBal;
-        uD.balance = newBal.toFixed(2);
-        localStorage.setItem(`${cUser}`, JSON.stringify(uD));
-
-        setTimeout(() => {
-            alert(`Deposit of ₦${payBal} is done successfully...`);
-            location.reload();
-        }, 1000);
+    if (payBal < 1000) {
+        alert('Minimum Deposit is ₦1,000')
     } else {
+        const  conf = confirm(`Are you sure you want to deposit ₦${payAmt.value.trim()}`)
+        if (conf) {
+            const cUser = localStorage.getItem('currentUser');
+            const uD = JSON.parse(localStorage.getItem(`${cUser}`));
 
+            let currentBal = parseFloat(uD.balance);
+
+            let newBal = currentBal + payBal;
+            uD.balance = newBal.toFixed(2);
+            localStorage.setItem(`${cUser}`, JSON.stringify(uD));
+
+            setTimeout(() => {
+                alert(`Deposit of ₦${payBal} is done successfully...`);
+                location.reload();
+            }, 1000);
+        } else {
+
+        }
     }
 }
 
@@ -266,46 +271,51 @@ const pw3 = document.getElementById('pN3');
 const pw4 = document.getElementById('pN4');
 
 const withdrawBtn = () => {
-    const  conf = confirm(`Are you sure you want to withdraw ₦${withdrawAmt.value.trim()}`)
-    if (conf) {
-        const cUser = localStorage.getItem('currentUser');
-        const uD = JSON.parse(localStorage.getItem(`${cUser}`));
+    let withdrawBal = parseFloat(withdrawAmt.value.trim());
 
-        const pA = `${pw1.value}${pw2.value}${pw3.value}${pw4.value}`
-
-        if (pA.length < 4) {
-            alert('Please input your Transaction Pin')
-            pw4.focus();
-        } else {
-            if (pA.trim() === uD.pin) {
-                pw1.value = '';
-                pw2.value = '';
-                pw3.value = '';
-                pw4.value = '';
-
-                let currentBal = parseFloat(uD.balance);
-                let withdrawBal = parseFloat(withdrawAmt.value.trim());
-
-                let newBal = currentBal - withdrawBal;
-
-                if (currentBal < withdrawBal) {
-                    alert(`Insufficient Balance to Initiate this Withdrawal\nCurrent Balance: ₦${currentBal}`);
-                } else {
-                    uD.balance = newBal.toFixed(2);
-
-                    localStorage.setItem(`${cUser}`, JSON.stringify(uD));
-                    setTimeout(() => {
-                        alert(`Withdrawal of ₦${withdrawBal} is done successfully...`);
-                        location.reload();
-                    }, 1000);
-                }
-            } else {
-                alert('Incorrect Old PIN')
-                pw4.focus();
-            }
-        }
-
+    if (withdrawBal < 1000) {
+        alert('Minimum Withdraw is ₦1,000')
     } else {
+        const  conf = confirm(`Are you sure you want to withdraw ₦${withdrawAmt.value.trim()}`)
+        if (conf) {
+            const cUser = localStorage.getItem('currentUser');
+            const uD = JSON.parse(localStorage.getItem(`${cUser}`));
 
+            const pA = `${pw1.value}${pw2.value}${pw3.value}${pw4.value}`
+            let currentBal = parseFloat(uD.balance);
+
+            if (pA.length < 4) {
+                alert('Please input your Transaction Pin')
+                pw4.focus();
+            } else {
+                if (pA.trim() === uD.pin) {
+                    pw1.value = '';
+                    pw2.value = '';
+                    pw3.value = '';
+                    pw4.value = '';
+
+                    let newBal = currentBal - withdrawBal;
+
+                    if (currentBal < withdrawBal) {
+                        alert(`Insufficient Balance to Initiate this Withdrawal\nCurrent Balance: ₦${currentBal}`);
+                    } else {
+                        uD.balance = newBal.toFixed(2);
+
+                        localStorage.setItem(`${cUser}`, JSON.stringify(uD));
+                        setTimeout(() => {
+                            alert(`Withdrawal of ₦${withdrawBal} is done successfully...`);
+                            location.reload();
+                        }, 1000);
+                    }
+                } else {
+                    alert('Incorrect Old PIN')
+                    pw4.focus();
+                }
+            }
+
+        } else {
+
+        }
     }
+
 }
