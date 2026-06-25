@@ -274,7 +274,7 @@ const withdrawBtn = () => {
     let withdrawBal = parseFloat(withdrawAmt.value.trim());
 
     if (withdrawBal < 1000) {
-        alert('Minimum Withdraw is ₦1,000')
+        alert("Minimum Withdraw is ₦1,000")
     } else {
         const  conf = confirm(`Are you sure you want to withdraw ₦${withdrawAmt.value.trim()}`)
         if (conf) {
