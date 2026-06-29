@@ -196,7 +196,7 @@
                         <div class="d-flex align-items-center gap-2" style="font-size: 13px; opacity: 0.85;">
                             <span>Naira Balance</span>
                             <i class="bi bi-chevron-down"></i>
-                            <i class="bi bi-eye"></i>
+                            <i class="fa fa-eye" id="toggleBalance"></i>
                         </div>
                         <div class="badge-yellow">
                             <!--                        ⚡ -->
@@ -485,7 +485,7 @@
                     <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
                         <span style="font-size: 12.8px; font-weight: 400; color: rgb(98, 124, 159);">Naira Balance</span>
                         <i class="bi bi-chevron-down" style="color: #1D4ED8;"></i>
-                        <i class="bi bi-eye" style="color: #9CA3AF;"></i>
+                        <i class="fa fa-eye" style="color: #9CA3AF;" id="toggleBalance2"></i>
                     </div>
                     <div class="d-flex align-items-baseline">
                         <sup style="font-size:23.6px; font-weight: 400; padding-right: 8px">₦</sup>
@@ -1282,6 +1282,59 @@
         this.classList.toggle("fa-eye");
         this.classList.toggle("fa-eye-slash");
     });
+
+    //Balance Toggle
+
+    const balAmount = document.getElementById("balAmount");
+    const balDecimals = document.getElementById('balDecimals')
+    const toggle2 = document.getElementById("toggleBalance");
+
+    let isHidden = false;
+
+    toggle2.addEventListener("click", function () {
+
+        if (isHidden) {
+            balAmount.textContent = balAmount.dataset.balance;
+            balDecimals.textContent = balDecimals.dataset.decimal;
+        } else {
+            balAmount.dataset.balance = balAmount.textContent;
+            balAmount.textContent = "******";
+            balDecimals.dataset.decimal = balDecimals.textContent;
+            balDecimals.textContent = "**";
+        }
+
+        isHidden = !isHidden;
+
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+    });
+
+    //Balance2 Toggle
+
+    const balAmount2 = document.getElementById("balAmount2");
+    const balDecimals2 = document.getElementById('balDecimals2')
+    const toggle3 = document.getElementById("toggleBalance2");
+
+    let isHidden2 = false;
+
+    toggle3.addEventListener("click", function () {
+
+        if (isHidden2) {
+            balAmount2.textContent = balAmount2.dataset.balance;
+            balDecimals2.textContent = balDecimals2.dataset.decimal;
+        } else {
+            balAmount2.dataset.balance = balAmount2.textContent;
+            balAmount2.textContent = "******";
+            balDecimals2.dataset.decimal = balDecimals2.textContent;
+            balDecimals2.textContent = "**";
+        }
+
+        isHidden2 = !isHidden2;
+
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+    });
+
 </script>
 
 </html>
