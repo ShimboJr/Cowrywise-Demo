@@ -88,7 +88,7 @@ const changePass = () => {
 
     const uD = JSON.parse(localStorage.getItem(`${cUser}`));
 
-    if (pass.value.trim() === '' || Cpass.value.trim() === '') {
+    if (Cpass.value.trim() === '') {
         alert('Please fill all field');
     } else if (uD.password !== pass.value.trim()) {
         alert('Old Password does not match');

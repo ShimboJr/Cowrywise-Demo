@@ -232,6 +232,7 @@ input:focus + label{
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
+    cursor: pointer;
 }
 
 .si-form{
