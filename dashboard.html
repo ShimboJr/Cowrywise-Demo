@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="dashboard.css">
 </head>
-<body onload="fetchInfo()">
+<body>
 
 <div id="loader">
     <img src="./images/gif-logo-loading.gif" alt="Loading">
@@ -1043,6 +1043,7 @@
         showView('home');
     });
 </script>
+
 </body>
 
 <script>
@@ -1265,6 +1266,9 @@
         }
     });
 </script>
+
+<!-- Load Paystack's script from their CDN -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
 
 <script src="dashboard.js"></script>
 

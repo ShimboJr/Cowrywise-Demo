@@ -239,25 +239,45 @@ const addCash = (fixedAmount) => {
 
 const addCashBtn = () => {
     let payBal = parseFloat(payAmt.value.trim());
-
-    if (payBal < 1000) {
+    if (payAmt.value.trim() === '') {
+        alert('Enter amount you want to deposit')
+    } else if (payBal < 1000) {
         alert('Minimum Deposit is ₦1,000')
     } else {
         const  conf = confirm(`Are you sure you want to deposit ₦${payAmt.value.trim()}`)
         if (conf) {
-            const cUser = localStorage.getItem('currentUser');
-            const uD = JSON.parse(localStorage.getItem(`${cUser}`));
+            const handler = PaystackPop.setup({
+                key: 'pk_test_277a98f5e34b8a347cf8a266fc1cf5238722528a',
+                email: 'testcustomer@gmail.com',
+                amount: `${payAmt.value.trim()}00`, // ₦5,000 - Paystack uses KOBO (multiply naira by 100)
+                currency: 'NGN',
 
-            let currentBal = parseFloat(uD.balance);
+                callback: function (response) {
+                    // This runs AFTER successful payment
+                    const cUser = localStorage.getItem('currentUser');
+                    const uD = JSON.parse(localStorage.getItem(`${cUser}`));
 
-            let newBal = currentBal + payBal;
-            uD.balance = newBal.toFixed(2);
-            localStorage.setItem(`${cUser}`, JSON.stringify(uD));
+                    let currentBal = parseFloat(uD.balance);
 
-            setTimeout(() => {
-                alert(`Deposit of ₦${payBal} is done successfully...`);
-                location.reload();
-            }, 1000);
+                    let newBal = currentBal + payBal;
+                    uD.balance = newBal.toFixed(2);
+                    localStorage.setItem(`${cUser}`, JSON.stringify(uD));
+
+                    setTimeout(() => {
+                        console.log('Payment done! Reference:', response.reference);
+                        alert(`Payment successful! Ref: ${response.reference}\nAmount: ₦${payBal}`);
+                        location.reload();
+                        //     alert(`Deposit of ₦${payBal} is done successfully...`);
+                    }, 1000);
+                },
+
+                onClose: function () {
+                    // This runs if the user closes the popup without paying
+                    alert('You closed the payment popup.');
+                }
+            });
+
+            handler.openIframe(); // Opens the Paystack popup
         } else {
 
         }
@@ -319,3 +339,10 @@ const withdrawBtn = () => {
     }
 
 }
+
+//Onload Code
+window.addEventListener('DOMContentLoaded', () => {
+
+    fetchInfo();
+
+});
