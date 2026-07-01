@@ -161,7 +161,7 @@
                 }
                 const cUser = localStorage.getItem(`${user.email.toLowerCase()}`);
                 if (cUser) {
-                    alert('Email Address Already Exist');
+                    // alert('Email Address Already Exist');
                     localStorage.setItem('currentUser', `${user.email}`);
 
                     const loginUser = JSON.parse(localStorage.getItem(`${user.email}`));
