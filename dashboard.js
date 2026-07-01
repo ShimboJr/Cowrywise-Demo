@@ -247,11 +247,12 @@ const addCashBtn = () => {
         const  conf = confirm(`Are you sure you want to deposit ₦${payAmt.value.trim()}`)
         if (conf) {
             const cUser = localStorage.getItem('currentUser');
+            const amountInKobo = Math.round(payBal * 100);
 
             const handler = PaystackPop.setup({
                 key: 'pk_test_277a98f5e34b8a347cf8a266fc1cf5238722528a',
                 email: `${cUser}`,
-                amount: `${payAmt.value.trim()}00`, // ₦5,000 - Paystack uses KOBO (multiply naira by 100)
+                amount: amountInKobo, // ₦5,000 - Paystack uses KOBO (multiply naira by 100)
                 currency: 'NGN',
 
                 callback: function (response) {
