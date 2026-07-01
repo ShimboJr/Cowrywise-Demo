@@ -13,6 +13,7 @@ body {
 .logo-div{
     font-size: 30px;
     font-weight: 500;
+    cursor: pointer;
     /*margin-left: 40px;*/
 }
 

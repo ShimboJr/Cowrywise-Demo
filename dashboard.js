@@ -343,6 +343,11 @@ const withdrawBtn = () => {
 
 }
 
+const reloadHome = () => {
+    window.location.href = 'dashboard.html'
+}
+
+
 //Onload Code
 window.addEventListener('DOMContentLoaded', () => {
 
