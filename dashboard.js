@@ -246,15 +246,16 @@ const addCashBtn = () => {
     } else {
         const  conf = confirm(`Are you sure you want to deposit ₦${payAmt.value.trim()}`)
         if (conf) {
+            const cUser = localStorage.getItem('currentUser');
+
             const handler = PaystackPop.setup({
                 key: 'pk_test_277a98f5e34b8a347cf8a266fc1cf5238722528a',
-                email: 'testcustomer@gmail.com',
+                email: `${cUser}`,
                 amount: `${payAmt.value.trim()}00`, // ₦5,000 - Paystack uses KOBO (multiply naira by 100)
                 currency: 'NGN',
 
                 callback: function (response) {
                     // This runs AFTER successful payment
-                    const cUser = localStorage.getItem('currentUser');
                     const uD = JSON.parse(localStorage.getItem(`${cUser}`));
 
                     let currentBal = parseFloat(uD.balance);
@@ -293,7 +294,9 @@ const pw4 = document.getElementById('pN4');
 const withdrawBtn = () => {
     let withdrawBal = parseFloat(withdrawAmt.value.trim());
 
-    if (withdrawBal < 1000) {
+    if (withdrawAmt.value.trim() === '') {
+        alert('Enter amount you want to withdraw')
+    } else if (withdrawBal < 1000) {
         alert("Minimum Withdraw is ₦1,000")
     } else {
         const  conf = confirm(`Are you sure you want to withdraw ₦${withdrawAmt.value.trim()}`)
@@ -328,7 +331,7 @@ const withdrawBtn = () => {
                         }, 1000);
                     }
                 } else {
-                    alert('Incorrect Old PIN')
+                    alert('Incorrect PIN')
                     pw4.focus();
                 }
             }
