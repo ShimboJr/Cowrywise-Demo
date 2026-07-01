@@ -103,7 +103,7 @@
                     </div>
 
                      
-                        <a href="" class="su-google"> <img src="./images/google.svg" alt=""> Sign up with Google</a>
+                        <a onclick="signGoogle()" class="su-google"> <img src="./images/google.svg" alt=""> Sign up with Google</a>
                     
 
                     <div class="divider">or</div>
@@ -154,6 +154,108 @@
         <img src="./images/touch-icon.png" alt="" class="fav-icon">
     </div>
 </body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-analytics.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyBITqfPwhTVHiTHGshElHrKmfR1sXTSEgg",
+        authDomain: "cowrywise-demo.firebaseapp.com",
+        projectId: "cowrywise-demo",
+        storageBucket: "cowrywise-demo.firebasestorage.app",
+        messagingSenderId: "994326373062",
+        appId: "1:994326373062:web:b17546ec4dcf7f22ecedc7",
+        measurementId: "G-KJTESJTL8Y"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    // Personal Code
+    const signGoogle = () => {
+        signInWithPopup(auth, provider)
+            .then((result)=>{
+                const user = result.user;
+                console.log(user);
+
+                const allUsername = JSON.parse(localStorage.getItem('usernameList')) || [];
+
+                // Object Declaration
+                const userData = {
+                    email: '',
+                    fname: '',
+                    lname: '',
+                    username: '',
+                    phone: '',
+                    password: '',
+                    pin: '',
+                    balance: ''
+                }
+                const cUser = localStorage.getItem(`${user.email.toLowerCase()}`);
+                if (cUser) {
+                    // alert('Email Address Already Exist');
+                    localStorage.setItem('currentUser', `${user.email}`);
+
+                    const loginUser = JSON.parse(localStorage.getItem(`${user.email}`));
+
+                    if (loginUser.pin === "") {
+                        alert("Proceed to Create your PIN")
+                        window.location.href = 'create-pin-google.html';
+                    } else {
+                        // alert('Login Successful');
+                        window.location.href = 'dashboard.html';
+                    }
+                } else {
+                    const parts = `${user.displayName}`.split(" ");
+
+                    const fname = parts.shift();     // John
+                    const lname = parts.join(" ");
+                    userData.email = `${user.email}`;
+                    userData.username = `@${user.email.slice(0,user.email.indexOf('@'))}`;
+                    userData.fname = fname;
+                    userData.lname = lname;
+                    userData.balance = '0.00';
+
+                    const userDataString = JSON.stringify(userData);
+                    localStorage.setItem(`${userData.email}`, userDataString);
+                    allUsername.push(`@${user.email.slice(0,user.email.indexOf('@'))}`);
+                    localStorage.setItem('usernameList', JSON.stringify(allUsername));
+                    localStorage.setItem('currentUser', `${user.email}`);
+
+                    const loginUser = JSON.parse(localStorage.getItem(`${userData.email}`));
+
+                    if (loginUser.pin === "") {
+                        alert("Proceed to Create your PIN")
+                        window.location.href = 'create-pin-google.html';
+                    } else {
+                        window.location.href = 'dashboard.html';
+                    }
+
+                    // alert(`Full Name: ${user.displayName}\nEmail: ${user.email}`)
+
+                }
+            }).catch((error)=>{
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+        })
+    }
+
+    window.signGoogle = signGoogle;
+
+</script>
 
 <script src="script.js"></script>
 
